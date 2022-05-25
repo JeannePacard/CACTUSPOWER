@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css-cactus.css" />
+  </head>
+
+  <body>
+    <h1 class="cactus">CACTUS POWER</h1>
+    <div class="frame">
+      <div class="body"></div>
+      <div class="bud"></div>
+      <div class="flower flower-3"></div>
+      <div class="flower flower-4"></div>
+      <div class="flower flower-2"></div>
+      <div class="flower flower-1"></div>
+
+      <div class="eyes eye-1">
+        <div class="heart_left"></div>
+        <div class="heart_right"></div>
+      </div>
+      <div class="eyes eye-2">
+        <div class="heart_left"></div>
+        <div class="heart_right"></div>
+      </div>
+
+      <div class="sourcil sourcil-1"></div>
+      <div class="sourcil sourcil-2"></div>
+
+      <div class="mouth"></div>
+      <div class="pot"></div>
+      <div class="pot-edge"></div>
+    </div>
+
+    <h1 class="cactus-2">
+      Une petite pousse vient d’être plantée… <br />
+      Rendez vous en septembre !
+    </h1>
+    <p id="demo"></p>
+    <script>
+      var deadline = new Date("Sep 12, 2022 8:30:00").getTime();
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var t = deadline - now;
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((t % (1000 * 60)) / 1000);
+        document.getElementById("demo").innerHTML =
+          days + " jours et " + hours + ":" + minutes + ":" + seconds;
+        if (t < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "MAINTENANT";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
